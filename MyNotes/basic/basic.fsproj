@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="IfElse.fs" />
+    <Compile Include="Loops.fs" />
+    <Compile Include="ForwardPiping.fs" />
+    <Compile Include="CollectionFunctions.fs" />
+    <Compile Include="StudentScoresSimple.fs" />
+    <Compile Include="StudentScoresRecord.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+</Project>
