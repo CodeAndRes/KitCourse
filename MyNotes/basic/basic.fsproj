@@ -8,9 +8,12 @@
     <Compile Include="Loops.fs" />
     <Compile Include="ForwardPiping.fs" />
     <Compile Include="CollectionFunctions.fs" />
-    <Compile Include="StudentScoresSimple.fs" />
-    <Compile Include="StudentScoresRecord.fs" />
     <Compile Include="CurryingParameters.fs" />
+    <Compile Include="StudentScoresSimple.fs" />
+    <Compile Include="Float.fs" />
+    <Compile Include="Student.fs" />
+    <Compile Include="Summarize.fs" />
+    <Compile Include="StudentScoresRecord.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
+namespace Basic
 
-module IfElse
-
+module IfElse =
   let ifElse (argv: string[]) =
     printfn "-----------------------"
     printfn "---    IF-ELSE   ------"

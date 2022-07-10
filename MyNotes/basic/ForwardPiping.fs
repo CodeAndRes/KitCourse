@@ -1,7 +1,8 @@
+namespace Basic
+open System
 
-module ForwardPiping 
+module ForwardPiping =
 
-  open System
   
   let isValid person = 
     String.IsNullOrWhiteSpace person |> not

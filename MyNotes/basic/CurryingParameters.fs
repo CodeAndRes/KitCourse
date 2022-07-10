@@ -1,6 +1,6 @@
+namespace Basic
 
-module CurryingParameters 
-  open System
+module CurryingParameters =
 
   let quote symbol s =
       sprintf "%c%s%c" symbol s symbol

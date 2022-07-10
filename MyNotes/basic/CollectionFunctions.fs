@@ -1,5 +1,7 @@
-module CollectionFunctions 
-  open System.IO
+namespace Basic 
+open System.IO
+
+module CollectionFunctions =
 
   let printMeanScore (row : string) =
     let elements = row.Split('\t')

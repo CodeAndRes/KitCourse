@@ -1,4 +1,6 @@
-module Loops  
+namespace Basic
+
+module Loops  =
 
   let loops (argv: string[]) = 
     printfn "-----------------------"
