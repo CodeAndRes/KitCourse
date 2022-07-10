@@ -8,7 +8,8 @@ let main argv =
   // Loops.loopArrayIter argv |> ignore
   // ForwardPiping.forwardPiping argv |> ignore
   // let param = String ["Samples/StudentScores.txt"] 
-  //CollectionFunctions.collectionFunction [|"Samples/StudentScores.txt"|]
-  //Simple.processFunction  [|"Samples/StudentScores.txt"|]
-  //RecordType.processFunction  [|"Samples/StudentScores.txt"|]
-  RecordType.processFunction  [|"Samples/StudentScoresNA.txt"|]
+  // CollectionFunctions.collectionFunction [|"Samples/StudentScores.txt"|]
+  // Simple.processFunction  [|"Samples/StudentScores.txt"|]
+  // RecordType.processFunction  [|"Samples/StudentScores.txt"|]
+  // RecordType.processFunction  [|"Samples/StudentScoresNA.txt"|]
+  CurryingParameters.processFunction argv
