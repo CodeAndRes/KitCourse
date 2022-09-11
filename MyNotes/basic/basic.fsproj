@@ -4,13 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="IfElse.fs" />
-    <Compile Include="Loops.fs" />
-    <Compile Include="ForwardPiping.fs" />
-    <Compile Include="CollectionFunctions.fs" />
-    <Compile Include="CurryingParameters.fs" />
     <Compile Include="StudentScoresSimple.fs" />
-    <Compile Include="Float.fs" />
+    <Compile Include="TestResults.fs" />
     <Compile Include="Student.fs" />
     <Compile Include="Summarize.fs" />
     <Compile Include="StudentScoresRecord.fs" />

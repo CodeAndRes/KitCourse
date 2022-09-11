@@ -10,21 +10,23 @@ type Student = {
 }
 module Student = 
 
-  let namePart i (s: string) = 
+  let nameParts (s: string) = 
       let elements = s.Split(',')
-      elements.[i].Trim()
+      let surname = elements.[0].Trim()
+      let givenName = elements.[1].Trim()
+      surname, givenName // Returning a tuple
 
   let fromString (s : string) =
       let elements = s.Split('\t')
       let name = elements[0]
-      let given = namePart 1 name
-      let sur = namePart 0 name
+      let sur, given = name |> nameParts
       let id = elements[1]
 
       let scores =
           elements
           |> Array.skip 2
-          |> Array.map (Float.tryFromStringOr 50.0)
+          |> Array.map TestResult.fromString
+          |> Array.choose TestResult.effectiveScore
 
       let meanScore = scores |> Array.average
       let maxScore = scores |> Array.max  
