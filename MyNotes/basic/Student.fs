@@ -13,8 +13,12 @@ module Student =
   let nameParts (s: string) = 
       let elements = s.Split(',')
       match elements with 
-        | [|surname; givenName|] -> surname.Trim(), givenName.Trim()
-        | _ -> raise (System.FormatException(sprintf "Invalid name format \"%s\"" s))
+        | [|surname|] -> 
+            surname.Trim(), "(None)"
+        | [|surname; givenName|] -> 
+            surname.Trim(), givenName.Trim()
+        | _ -> 
+            raise (System.FormatException(sprintf "Invalid name format \"%s\"" s))
 
   let fromString (s : string) =
       let elements = s.Split('\t')
