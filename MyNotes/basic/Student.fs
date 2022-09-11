@@ -12,9 +12,9 @@ module Student =
 
   let nameParts (s: string) = 
       let elements = s.Split(',')
-      let surname = elements.[0].Trim()
-      let givenName = elements.[1].Trim()
-      surname, givenName // Returning a tuple
+      match elements with 
+        | [|surname; givenName|] -> surname.Trim(), givenName.Trim()
+        | _ -> raise (System.FormatException(sprintf "Invalid name format \"%s\"" s))
 
   let fromString (s : string) =
       let elements = s.Split('\t')
