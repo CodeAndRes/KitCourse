@@ -20,13 +20,13 @@ module StudentsScoresProgram =
               | :? IO.IOException as e ->
                   printfn "Error: %s" e.Message
                   printfn "   The file was IO problem!!"   
-                  1   
+                  2   
               | _ as e ->
                   printfn "   Unexpected error: %s!!" e.Message   
-                  1   
+                  3   
           else
               printfn "File not found: %s" filePath
-              2
+              4
       else
           printfn "Please specify a file."
-          1
+          5
