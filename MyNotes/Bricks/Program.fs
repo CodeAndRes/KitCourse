@@ -65,4 +65,30 @@ let main argv =
     )
     printfn ""
 
+    printfn "**************************************"
+    printfn "Grouped by total stud count (Array.groupBy):"
+    printfn "**************************************"
+    printfn ""
+    let groupedByStuns =
+        bricks
+        |> Array.groupBy (fun b -> b.StudColumns * b.StudRows)
+
+    groupedByStuns
+    |> Array.sortByDescending fst // sort by first element of the tuple descending, is equivalent to (fun (studCount, _) -> studCount)
+    |> Array.iter (fun (studs, bricks) ->
+        printfn "%i studs:" studs
+        printf "\t"
+        bricks
+        |> Array.iter Brick.printConsole
+        printfn ""
+    )
+    // printfn ""
+    // printfn "**************************************"
+    // printfn "**************************************"
+    // printfn "%20A" bricks
+    // printfn "**************************************"
+    // printfn "**************************************"
+    // printfn "%20A" groupedByStuns
+    // printfn "**************************************"
+    // printfn "**************************************"
     0 
