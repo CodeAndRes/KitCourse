@@ -10,7 +10,8 @@ module StudentsScoresProgram =
           if File.Exists filePath then
               printfn "Processing %s" filePath
               try
-                  Summarize.summarize filePath
+                  //Summarize.summarize filePath
+                  Summarize.sumarizeGroup filePath
                   0
               with
               | :? FormatException as e ->
