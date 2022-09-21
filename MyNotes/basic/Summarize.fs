@@ -3,30 +3,32 @@ open System.IO
 
 module Summarize =
   let readAndCount filePath = 
-        let rows = File.ReadAllLines filePath
-        let studentCount = (rows |> Array.length) - 1
+        let rows = 
+            File.ReadLines filePath
+            |> Seq.cache
+        let studentCount = (rows |> Seq.length) - 1
         printfn "Student count: %i" studentCount
         rows
-        |> Array.skip 1
-        |> Array.map Student.fromString
+        |> Seq.skip 1
+        |> Seq.map Student.fromString
 
 
   let summarize filePath = 
         readAndCount filePath
-        |> Array.sortBy (fun student -> student.Surename)
-        |> Array.iter Student.printSummary
+        |> Seq.sortBy (fun student -> student.Surename)
+        |> Seq.iter Student.printSummary
 
   let sumarizeGroup filePath = 
         let groupedBySurename = 
           readAndCount filePath
-          |> Array.groupBy (fun student  -> student.Surename) 
+          |> Seq.groupBy (fun student  -> student.Surename) 
         
         groupedBySurename
-        |> Array.sortBy fst
-        |> Array.iter (fun (surename, students) ->  
+        |> Seq.sortBy fst
+        |> Seq.iter (fun (surename, students) ->  
           printfn " "
           printfn "%s:" surename 
           students
-          |> Array.sortBy(fun student -> student.GivenName)  
-          |> Array.iter Student.printGroupSummary
+          |> Seq.sortBy(fun student -> student.GivenName)  
+          |> Seq.iter Student.printGroupSummary
         )
