@@ -2,4 +2,4 @@
 
 [<EntryPoint>]
 let main argv =
-  StudentsScoresProgram.processFunction  [|"Samples/StudentScoresAE.txt"|] 
+  StudentsScoresProgram.processFunction  [|"Samples/SchoolCodes.txt"; "Samples/StudentScoresSchool.txt"|] 

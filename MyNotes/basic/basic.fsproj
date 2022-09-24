@@ -6,6 +6,7 @@
   <ItemGroup>
     <Compile Include="StudentScoresSimple.fs" />
     <Compile Include="TestResults.fs" />
+    <Compile Include="SchoolCodes.fs" />
     <Compile Include="Student.fs" />
     <Compile Include="Summarize.fs" />
     <Compile Include="StudentScoresRecord.fs" />
