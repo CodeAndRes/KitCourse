@@ -2,15 +2,16 @@ namespace StudentScores
 open System.IO
 
 module Summarize =
-  let readAndCount filePath = 
+  let readAndCount schoolCodesFilePath filePath = 
         let rows = 
             File.ReadLines filePath
             |> Seq.cache
         let studentCount = (rows |> Seq.length) - 1
         printfn "Student count: %i" studentCount
+        let schoolCodes = SchoolCodes.load schoolCodesFilePath
         rows
         |> Seq.skip 1
-        |> Seq.map Student.fromString
+        |> Seq.map (Student.fromString schoolCodes)
 
 
   let summarize filePath = 
