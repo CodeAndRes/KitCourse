@@ -24,15 +24,17 @@ module Student =
         | _ -> 
             raise (System.FormatException(sprintf "Invalid name format \"%s\"" s))
 
-  let fromString (schoolCodes : IDictionary<int, string>)( s : string) =
+  let fromString (schoolCodes : Map<_, _>)( s : string) =
       let elements = s.Split('\t')
       let name = elements[0] |> nameParts
       let id = elements[1]
-      let schoolCode = elements[2] |> int
+      let schoolCode = elements[2] 
       let schoolName = 
-          match schoolCodes.TryGetValue(schoolCode) with
-          | true, name -> name
-          | false, _ -> "(Unknown)"
+      //     schoolCodes.TryFind(schoolCode)
+      //     |> Option.defaultValue "(Unknown)"
+           schoolCodes
+           |> Map.tryFind(schoolCode)
+           |> Option.defaultValue "(Unknown)"
 
       let scores =
           elements

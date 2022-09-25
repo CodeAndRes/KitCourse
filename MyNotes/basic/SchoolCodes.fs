@@ -19,10 +19,11 @@ module SchoolCodes =
         |> Seq.skip 1
         |> Seq.map (fun row -> 
                 let elements = row.Split('\t')
-                let id = elements.[0] |> int 
+                let id = elements.[0] 
                 let name = elements.[1]   
                 id, name)
         //|> dict
         |> Map.ofSeq
+        |> Map.add "*" "(External)"
         // Or better still:
         //|> readOnlyDict
