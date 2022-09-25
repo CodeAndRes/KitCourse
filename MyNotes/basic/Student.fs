@@ -29,7 +29,10 @@ module Student =
       let name = elements[0] |> nameParts
       let id = elements[1]
       let schoolCode = elements[2] |> int
-      let schoolName = schoolCodes[schoolCode]
+      let schoolName = 
+          match schoolCodes.TryGetValue(schoolCode) with
+          | true, name -> name
+          | false, _ -> "(Unknown)"
 
       let scores =
           elements
